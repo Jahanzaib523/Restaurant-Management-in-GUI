@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="645.0" style="-fx-background-color: #993300;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.ViewCController">
+   <children>
+      <AnchorPane prefHeight="410.0" prefWidth="155.0" style="-fx-background-color: #003366;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="CostatButton" layoutY="147.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Order Status" />
+            <Button fx:id="CmorderButton" layoutY="92.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Make Order" />
+            <Button fx:id="CeorderButton" layoutY="200.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Edit Order" />
+            <Button fx:id="CfeedbackButton" layoutY="251.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Feedback" />
+         </children></AnchorPane>
+      <TabPane fx:id="CfeedbackTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+         <tabs>
+            <Tab fx:id="CfeedbackTab" text="Feedback">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="20.0" layoutY="8.0" prefHeight="259.0" prefWidth="456.0">
+                          <columns>
+                            <TableColumn prefWidth="89.0" text="Order No" />
+                            <TableColumn prefWidth="124.0" text="Status" />
+                              <TableColumn prefWidth="100.0" text="Feedback Date" />
+                              <TableColumn prefWidth="142.0" text="Comments" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="CreviewTab" text="Review">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="217.0" layoutY="28.0" prefHeight="233.0" prefWidth="272.0">
+                          <columns>
+                            <TableColumn prefWidth="44.0" text="Order" />
+                            <TableColumn prefWidth="100.0" text="Deal" />
+                              <TableColumn text="Order date" />
+                              <TableColumn prefWidth="47.0" text="Deal no" />
+                          </columns>
+                        </TableView>
+                        <TextArea layoutX="8.0" layoutY="28.0" prefHeight="91.0" prefWidth="201.0" promptText="Review" />
+                        <TextField layoutX="60.0" layoutY="132.0" />
+                        <Text layoutX="8.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order No" />
+                        <TextField layoutX="60.0" layoutY="174.0" />
+                        <Text layoutX="12.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deal No" />
+                        <Button layoutX="143.0" layoutY="216.0" mnemonicParsing="false" text="Submit" />
+                        <TextField layoutX="60.0" layoutY="216.0" prefHeight="25.0" prefWidth="50.0" promptText="/10" />
+                        <Text layoutX="16.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <TabPane fx:id="CorderTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+         <tabs>
+            <Tab fx:id="CostatTab" text="My Order">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="-1.0" prefHeight="274.0" prefWidth="490.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Order No" />
+                            <TableColumn prefWidth="148.0" text="Deal No" />
+                              <TableColumn prefWidth="142.0" text="Status" />
+                              <TableColumn prefWidth="124.0" text="Order Time" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="CeorderTab" text="Edit">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ff4;">
+                     <children>
+                        <TableView layoutX="193.0" layoutY="38.0" prefHeight="200.0" prefWidth="290.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Order No" />
+                            <TableColumn prefWidth="75.0" text="Deal Item" />
+                              <TableColumn prefWidth="139.0" text="Deal Name" />
+                          </columns>
+                        </TableView>
+                        <Text layoutX="8.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order No:" />
+                        <Button layoutX="66.0" layoutY="125.0" mnemonicParsing="false" text="Delete" />
+                        <TextField layoutX="66.0" layoutY="84.0" prefHeight="25.0" prefWidth="77.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Text layoutX="471.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Favourite:" />
+      <Text layoutX="480.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+      <Text layoutX="483.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" />
+      <Text layoutX="523.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="111.55665211379528" />
+      <Text layoutX="523.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="111.55665211379528" />
+      <Text layoutX="523.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="111.55665211379528" />
+      <TabPane fx:id="CmorderTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+        <tabs>
+          <Tab fx:id="CmorderTab" text="Create">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="225.0" layoutY="8.0" prefHeight="200.0" prefWidth="259.0">
+                          <columns>
+                            <TableColumn prefWidth="49.0" text="Deal no" />
+                            <TableColumn prefWidth="112.0" text="Deal Name" />
+                              <TableColumn prefWidth="97.0" text="Item" />
+                          </columns>
+                        </TableView>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="135.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Deal No" />
+                            <TableColumn prefWidth="75.0" text="Price" />
+                          </columns>
+                        </TableView>
+                        <Text layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order No:" />
+                        <Text layoutX="81.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.13671875" />
+                        <Text layoutX="17.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deal No:" />
+                        <TextField layoutX="67.0" layoutY="180.0" prefHeight="25.0" prefWidth="112.0" />
+                        <Button layoutX="17.0" layoutY="226.0" mnemonicParsing="false" text="Next Order" />
+                        <Button layoutX="104.0" layoutY="226.0" mnemonicParsing="false" text="Add" />
+                        <Button layoutX="153.0" layoutY="226.0" mnemonicParsing="false" text="Confirm" />
+                        <Text layoutX="231.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tota;:" />
+                        <Text layoutX="269.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS." wrappingWidth="104.154296875" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

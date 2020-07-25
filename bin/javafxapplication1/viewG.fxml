@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="645.0" style="-fx-background-color: #993300;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.ViewGController">
+    <children>
+        <AnchorPane prefHeight="410.0" prefWidth="155.0" style="-fx-background-color: #003366;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="GostatButton" layoutY="147.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Order Status" />
+                <Button fx:id="GmorderButton" layoutY="92.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Make Order" />
+                <Button fx:id="GeorderButton" layoutY="200.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Edit Order" />
+                <Button fx:id="GregisterButton" layoutY="251.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Register" />
+            </children>
+        </AnchorPane>
+        <TabPane fx:id="GmorderTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <tabs>
+                <Tab fx:id="GmorderTab" text="Create">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView layoutX="225.0" layoutY="8.0" prefHeight="200.0" prefWidth="259.0">
+                                    <columns>
+                                        <TableColumn prefWidth="49.0" text="Deal no" />
+                                        <TableColumn prefWidth="112.0" text="Deal Name" />
+                                        <TableColumn prefWidth="97.0" text="Item" />
+                                    </columns>
+                                </TableView>
+                                <TableView layoutX="14.0" layoutY="14.0" prefHeight="135.0" prefWidth="200.0">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="Deal No" />
+                                        <TableColumn prefWidth="75.0" text="Price" />
+                                    </columns>
+                                </TableView>
+                                <Text layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order No:" />
+                                <Text layoutX="81.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.13671875" />
+                                <Text layoutX="17.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deal No:" />
+                                <TextField layoutX="67.0" layoutY="180.0" prefHeight="25.0" prefWidth="112.0" />
+                                <Button layoutX="17.0" layoutY="226.0" mnemonicParsing="false" text="Next Order" />
+                                <Button layoutX="104.0" layoutY="226.0" mnemonicParsing="false" text="Add" />
+                                <Button layoutX="153.0" layoutY="226.0" mnemonicParsing="false" text="Confirm" />
+                                <Text layoutX="231.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:" />
+                                <Text layoutX="269.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RS." wrappingWidth="104.154296875" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TabPane fx:id="GregisterTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <tabs>
+                <Tab fx:id="GregisterTab" text="Registration">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Text layoutX="52.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                                <Text layoutX="52.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                                <Text layoutX="52.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Membership" />
+                                <Text layoutX="50.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No" />
+                                <TextArea editable="false" layoutX="70.0" layoutY="138.0" prefHeight="77.0" prefWidth="269.0" text="0 for No subscription&#10;1 for Bronze = 15% Discount&#10;2 for Gold = 20% Discount&#10;3 for Platinum = 25% Discount">
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                </TextArea>
+                                <TextField layoutX="131.0" layoutY="97.0" promptText="03390XXXXXX">
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                </TextField>
+                                <TextField layoutX="131.0" layoutY="240.0" prefHeight="25.0" prefWidth="39.0" />
+                                <TextField layoutX="131.0" layoutY="62.0" promptText="example@domain.com">
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                </TextField>
+                                <TextField layoutX="131.0" layoutY="25.0">
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                </TextField>
+                                <Button layoutX="206.0" layoutY="240.0" mnemonicParsing="false" text="Register" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TabPane fx:id="GorderTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <tabs>
+                <Tab fx:id="GostatTab" text="My Order">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView layoutX="-1.0" prefHeight="274.0" prefWidth="490.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="Order No" />
+                                        <TableColumn prefWidth="148.0" text="Deal No" />
+                                        <TableColumn prefWidth="142.0" text="Status" />
+                                        <TableColumn prefWidth="124.0" text="Order Time" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="GeorderTab" text="Edit">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #99CC99;">
+                            <children>
+                                <TableView layoutX="193.0" layoutY="38.0" prefHeight="200.0" prefWidth="290.0">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" text="Order No" />
+                                        <TableColumn prefWidth="75.0" text="Deal Item" />
+                                        <TableColumn prefWidth="139.0" text="Deal Name" />
+                                    </columns>
+                                </TableView>
+                                <Text layoutX="8.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order No:" />
+                                <Button fx:id="GdeorderButton" layoutX="66.0" layoutY="125.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" text="Delete" />
+                                <TextField fx:id="GeditTextfeild" layoutX="66.0" layoutY="84.0" prefHeight="25.0" prefWidth="77.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+      <Text layoutX="447.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+      <Text layoutX="447.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" />
+      <Text fx:id="Gname" layoutX="492.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="138.13671875" />
+      <Text fx:id="GdateText" layoutX="492.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="138.13671469688416" />
+    </children>
+</AnchorPane>

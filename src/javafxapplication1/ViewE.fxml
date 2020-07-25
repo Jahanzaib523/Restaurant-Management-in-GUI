@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #993300;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.ViewEController">
+    <children>
+        <AnchorPane prefHeight="410.0" prefWidth="155.0" style="-fx-background-color: #003366;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="EattendanceButton" layoutY="92.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Attendance" />
+                <Button fx:id="EhOrderButton" layoutY="149.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="Handle Order" />
+                <Button fx:id="EvInventoryButton" layoutY="200.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="155.0" text="View Inventory" />
+            </children>
+        </AnchorPane>
+        <TabPane fx:id="EorderTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <tabs>
+                <Tab fx:id="EorderTab" closable="false" text="Orders">
+                    <content>
+                        <AnchorPane fx:id="EorderAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="EorderTextfeild" layoutX="10.0" layoutY="60.0" prefHeight="14.0" prefWidth="90.0" />
+                                <Text layoutX="20.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID Here" />
+                                <MenuButton layoutX="25.0" layoutY="106.0" mnemonicParsing="false" text="Select">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="processing" />
+                                        <MenuItem mnemonicParsing="false" text="completed" />
+                                    </items>
+                                </MenuButton>
+                                <TableView fx:id="EordersTabelview" layoutX="119.0" layoutY="11.0" prefHeight="264.0" prefWidth="322.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="11.0">
+                                    <columns>
+                                        <TableColumn fx:id="EoidTablecol" prefWidth="124.0" text="Order_ID" />
+                                        <TableColumn fx:id="EotTablecol" prefWidth="183.0" text="Order_Time" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TabPane fx:id="EAttendanceTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <tabs>
+                <Tab fx:id="EmAttendanceTab" closable="false" text="Mark Attendance">
+                    <content>
+                        <AnchorPane fx:id="EmAttendanceAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="EentertTextfeild" layoutX="14.0" layoutY="80.0" promptText="Format: 23:59" />
+                                <TextField fx:id="EexittTextfeild" layoutX="223.0" layoutY="80.0" promptText="Format 23:59" />
+                                <Button fx:id="EentertButton" layoutX="52.0" layoutY="126.0" mnemonicParsing="false" text="Enter Time" />
+                                <Button fx:id="EexittButton" layoutX="272.0" layoutY="126.0" mnemonicParsing="false" text="Exit Time" />
+                                <Text layoutX="66.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Time" />
+                                <Text layoutX="261.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit Time" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="EvAttendanceTab" onSelectionChanged="#handleButtonAction" text="View Attendance">
+                    <content>
+                        <AnchorPane fx:id="EvAttendanceAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="39.0" layoutY="13.0" prefHeight="245.0" prefWidth="382.0">
+                          <columns>
+                            <TableColumn prefWidth="93.0" text="Month" />
+                            <TableColumn prefWidth="148.0" text="Entry Time" />
+                              <TableColumn prefWidth="138.0" text="Exit Time" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TabPane fx:id="EinventoryTPane" layoutX="155.0" layoutY="95.0" prefHeight="315.0" prefWidth="490.0" style="-fx-background-color: #99CC99;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <tabs>
+                <Tab fx:id="EinventoryTab" text="Inventory">
+                    <content>
+                        <AnchorPane fx:id="EinventoryAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="33.0" layoutY="11.0" prefHeight="252.0" prefWidth="387.0">
+                          <columns>
+                            <TableColumn prefWidth="179.0" text="Item Name" />
+                            <TableColumn minWidth="0.0" prefWidth="207.0" text="Quantity" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TextArea fx:id="EiconsoleTextarea" editable="false" layoutX="155.0" layoutY="43.0" prefHeight="52.0" prefWidth="445.0" promptText="Console" style="-fx-background-color: #993300;" wrapText="true" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="426.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+      <Text layoutX="167.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" />
+      <Text layoutX="470.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.13671875" />
+      <Text layoutX="205.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.13671875" />
+    </children>
+</AnchorPane>
